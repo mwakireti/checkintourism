@@ -5,12 +5,15 @@ function ServicePreviewCard({ service }) {
     <Link
       to={`/services/${service.slug}`}
       className="service-preview-card"
+      aria-label={`Learn more about ${service.title}`}
     >
       <img
         className="service-preview-card__image"
         src={service.image}
         alt={service.title}
       />
+
+      <div className="service-preview-card__base-overlay" />
 
       <div className="service-preview-card__overlay" />
 
@@ -22,6 +25,11 @@ function ServicePreviewCard({ service }) {
         <p className="service-preview-card__description">
           {service.shortDescription}
         </p>
+
+        <span className="service-preview-card__link">
+          Learn More
+          <span>→</span>
+        </span>
       </div>
     </Link>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ServicePreviewCard from "./ServicePreviewCard";
 import { services } from "../../../data/services";
 import "./Services.scss";
@@ -50,21 +51,19 @@ function Services() {
       <div className="container">
 
         <div className="services__header">
-          <div>
-            <span className="services__eyebrow">
-              OUR SERVICES
-            </span>
+          <span className="services__eyebrow">
+            OUR SERVICES
+          </span>
 
-            <h2 className="services__title">
-              Everything You Need for Your Journey
-            </h2>
+          <h2 className="services__title">
+            Everything You Need for Your Journey
+          </h2>
 
-            <p className="services__intro">
-              From flights and accommodation to tours, visas,
-              transport and activities, we help bring your travel
-              plans together in one place.
-            </p>
-          </div>
+          <p className="services__intro">
+            From flights and accommodation to tours, visas,
+            transport and activities, we help bring your travel
+            plans together in one place.
+          </p>
         </div>
 
         <div className="services__carousel">
@@ -83,9 +82,8 @@ function Services() {
             <div
               className="services__track"
               style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / visibleCards)
-                }%)`,
+                transform: `translateX(-${currentIndex * (100 / visibleCards)
+                  }%)`,
               }}
             >
               {services.map((service) => (
@@ -113,17 +111,26 @@ function Services() {
           </button>
 
         </div>
+        
+          <div className="services__footer">
+          <Link
+            to="/services"
+            className="services__view-all"
+          >
+            See All Services
+            <span>→</span>
+          </Link>
+        </div>
 
         <div className="services__dots">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               type="button"
               key={index}
-              className={`services__dot ${
-                index === currentIndex
-                  ? "services__dot--active"
-                  : ""
-              }`}
+              className={`services__dot ${index === currentIndex
+                ? "services__dot--active"
+                : ""
+                }`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to services slide ${index + 1}`}
               aria-current={
@@ -132,7 +139,6 @@ function Services() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
