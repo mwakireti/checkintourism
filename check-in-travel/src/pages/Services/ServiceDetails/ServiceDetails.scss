@@ -1,0 +1,468 @@
+@use "../../../styles/variables" as *;
+
+.service-details {
+  background: $white;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.service-page-header {
+  position: relative;
+  background: $dark;
+  color: $white;
+  padding: 55px 0 60px;
+  overflow: hidden;
+}
+
+.service-page-header::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -80px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(25, 118, 210, 0.15);
+}
+
+.service-page-header__content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+/* Breadcrumb */
+
+.service-page-header__breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.service-page-header__breadcrumb a {
+  color: rgba(255, 255, 255, 0.85);
+
+  transition: color 0.2s ease;
+}
+
+.service-page-header__breadcrumb a:hover {
+  color: $brand-green;
+}
+
+/* Eyebrow */
+
+.service-page-header__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 1.5px;
+
+  color: $brand-green;
+}
+
+/* Title */
+
+.service-page-header__title {
+  margin: 0 0 12px;
+
+  font-size: 46px;
+  font-weight: $font-weight-bold;
+  line-height: 1.15;
+
+  color: $white;
+}
+
+/* Tagline */
+
+.service-page-header__tagline {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.service-details > .container {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.service-details__layout {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 340px;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.service-details__image {
+  width: 100%;
+
+  aspect-ratio: 16 / 8;
+
+  overflow: hidden;
+
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+
+  background: $light-bg;
+}
+
+.service-details__image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.service-details__image:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.service-details__intro h2 {
+  margin: 0 0 18px;
+
+  font-size: 30px;
+  font-weight: $font-weight-semibold;
+
+  line-height: $heading-line-height;
+
+  color: $dark;
+}
+
+.service-details__description {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: $body-line-height;
+
+  color: $text-color;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.service-details__features-section {
+  margin-top: 45px;
+}
+
+.service-details__features-section h3 {
+  margin: 0 0 22px;
+
+  font-size: 24px;
+  font-weight: $font-weight-semibold;
+
+  color: $dark;
+}
+
+.service-details__features {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px 25px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.service-details__features li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: $text-color;
+}
+
+.service-details__check {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: rgba(100, 200, 47, 0.12);
+
+  color: $brand-green;
+
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+}
+
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+
+.service-details__disclaimer {
+  margin-top: 40px;
+  padding: 20px 22px;
+
+  border-left: 4px solid $brand-blue;
+
+  border-radius: 6px;
+
+  background: $light-bg;
+}
+
+.service-details__disclaimer strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 15px;
+
+  color: $dark;
+}
+
+.service-details__disclaimer p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: $text-color;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.service-details__sidebar {
+  position: sticky;
+
+  top: 110px;
+}
+
+.service-details__card {
+  padding: 30px;
+
+  border-radius: 12px;
+
+  background: $light-bg;
+
+  border: 1px solid #eeeeee;
+}
+
+.service-details__card-eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+
+  letter-spacing: 1px;
+
+  color: $brand-blue;
+}
+
+.service-details__card h3 {
+  margin: 0 0 15px;
+
+  font-size: 24px;
+  line-height: 1.3;
+
+  color: $dark;
+}
+
+.service-details__card p {
+  margin: 0 0 25px;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: $text-color;
+}
+
+.service-details__card .button {
+  width: 100%;
+}
+
+
+/* Back link */
+
+.service-details__back {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 20px;
+
+  font-size: 15px;
+  font-weight: $font-weight-medium;
+
+  color: $brand-blue;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-details__back:hover {
+  color: $brand-green;
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.service-details--not-found {
+  padding: 100px 0;
+}
+
+.service-details--not-found h1 {
+  margin-bottom: 15px;
+
+  color: $dark;
+}
+
+.service-details--not-found p {
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .service-page-header {
+    padding: 45px 0 50px;
+  }
+
+  .service-page-header__title {
+    font-size: 40px;
+  }
+
+  .service-details > .container {
+    padding-top: 55px;
+  }
+
+  .service-details__layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .service-details__sidebar {
+    position: static;
+  }
+
+  .service-details__card {
+    max-width: 600px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .service-page-header {
+    padding: 35px 0 40px;
+  }
+
+  .service-page-header__breadcrumb {
+    margin-bottom: 20px;
+
+    font-size: 13px;
+  }
+
+  .service-page-header__title {
+    font-size: 32px;
+  }
+
+  .service-page-header__tagline {
+    font-size: 18px;
+  }
+
+  .service-details > .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .service-details__image {
+    aspect-ratio: 16 / 10;
+
+    margin-bottom: 30px;
+  }
+
+  .service-details__intro h2 {
+    font-size: 26px;
+  }
+
+  .service-details__description {
+    font-size: 16px;
+  }
+
+  .service-details__features {
+    grid-template-columns: 1fr;
+  }
+
+  .service-details__card {
+    padding: 25px;
+  }
+}
