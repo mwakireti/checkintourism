@@ -111,8 +111,7 @@ function Services() {
           </button>
 
         </div>
-        
-          <div className="services__footer">
+        <div className="services__footer">
           <Link
             to="/services"
             className="services__view-all"
@@ -121,7 +120,6 @@ function Services() {
             <span>→</span>
           </Link>
         </div>
-
         <div className="services__dots">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button

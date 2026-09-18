@@ -152,6 +152,101 @@ function Services() {
           </div>
         </div>
       </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="services-page__why">
+        <div className="container">
+
+          <div className="services-page__why-header">
+            <span className="services-page__why-eyebrow">
+              WHY CHOOSE CHECK IN
+            </span>
+
+            <h2 className="services-page__why-title">
+              Travel Support From Planning to Experience
+            </h2>
+
+            <p className="services-page__why-intro">
+              We help bring the important pieces of your journey together,
+              giving you practical support from the moment you start planning
+              until you are ready to travel.
+            </p>
+          </div>
+
+
+          <div className="services-page__why-grid">
+
+            {/* 01 */}
+            <div className="services-page__why-item">
+              <span className="services-page__why-number">
+                01
+              </span>
+
+              <div>
+                <h3>Personalised Service</h3>
+
+                <p>
+                  Travel solutions based on your needs,
+                  destination and budget.
+                </p>
+              </div>
+            </div>
+
+
+            {/* 02 */}
+            <div className="services-page__why-item">
+              <span className="services-page__why-number">
+                02
+              </span>
+
+              <div>
+                <h3>Convenient Planning</h3>
+
+                <p>
+                  Bring flights, accommodation, tours, visas,
+                  transport and activities together in one place.
+                </p>
+              </div>
+            </div>
+
+
+            {/* 03 */}
+            <div className="services-page__why-item">
+              <span className="services-page__why-number">
+                03
+              </span>
+
+              <div>
+                <h3>Expert Assistance</h3>
+
+                <p>
+                  Get practical guidance to help you understand
+                  your travel options and requirements.
+                </p>
+              </div>
+            </div>
+
+
+            {/* 04 */}
+            <div className="services-page__why-item">
+              <span className="services-page__why-number">
+                04
+              </span>
+
+              <div>
+                <h3>Journey-Focused Support</h3>
+
+                <p>
+                  We help you organize the important details
+                  so you can travel with greater confidence.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
     </section>
   );
 }

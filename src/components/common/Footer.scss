@@ -1,0 +1,406 @@
+@use "../../styles/variables" as *;
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.site-footer {
+  background: #172231;
+  color: $white;
+  margin-top: 50px;
+}
+
+
+/* =================================
+   MAIN FOOTER
+================================= */
+
+.site-footer__main {
+  padding: 75px 0 65px;
+}
+
+.site-footer__grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr;
+
+  gap: 70px;
+}
+
+
+/* =================================
+   BRAND
+================================= */
+
+.site-footer__brand-name {
+  display: inline-flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+
+  font-size: 25px;
+  font-weight: $font-weight-bold;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+
+  color: $white;
+}
+
+.site-footer__brand-name span {
+  margin-top: 6px;
+
+  font-size: 11px;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1.8px;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.site-footer__tagline {
+  margin: 0 0 8px;
+
+  font-size: 19px;
+  font-weight: $font-weight-semibold;
+
+  color: $white;
+}
+
+.site-footer__motto {
+  margin: 0 0 28px;
+
+  font-size: 15px;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.site-footer__motto span {
+  margin: 0 7px;
+
+  color: $brand-green;
+}
+
+.site-footer__button {
+  min-width: 145px;
+}
+
+
+/* =================================
+   COLUMN
+================================= */
+
+.site-footer__heading {
+  margin: 0 0 22px;
+
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+
+  color: $white;
+}
+
+
+/* =================================
+   LINKS
+================================= */
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  font-size: 15px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-footer__links a::before {
+  content: "→";
+
+  margin-right: 7px;
+
+  color: $brand-blue;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-footer__links a:hover {
+  color: $white;
+  transform: translateX(2px);
+}
+
+.site-footer__links a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =================================
+   CONTACT
+================================= */
+
+.site-footer__contact {
+  padding: 35px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__contact-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+.site-footer__contact-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.site-footer__contact-item span {
+  font-size: 12px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $brand-green;
+}
+
+.site-footer__contact-item strong {
+  font-size: 15px;
+  font-weight: $font-weight-medium;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =================================
+   SECONDARY
+================================= */
+
+.site-footer__secondary {
+  padding: 35px 0;
+}
+
+.site-footer__secondary-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+}
+
+
+/* LEGAL */
+
+.site-footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px 22px;
+}
+
+.site-footer__legal-links a {
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  transition: color 0.2s ease;
+}
+
+.site-footer__legal-links a:hover {
+  color: $brand-green;
+}
+
+
+/* SOCIAL */
+
+.site-footer__social {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+  min-height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 5px;
+
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-footer__social a:hover {
+  background: $brand-blue;
+  border-color: $brand-blue;
+  color: $white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =================================
+   COPYRIGHT
+================================= */
+
+.site-footer__bottom {
+  padding: 22px 0;
+
+  background: #111a26;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 991px) {
+
+  .site-footer__main {
+    padding: 60px 0 50px;
+  }
+
+  .site-footer__grid {
+    grid-template-columns:
+      1.3fr
+      1fr
+      1fr;
+
+    gap: 35px;
+  }
+
+  .site-footer__contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 767px) {
+
+  .site-footer__main {
+    padding: 50px 0 45px;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .site-footer__brand-name {
+    font-size: 23px;
+  }
+
+  .site-footer__heading {
+    margin-bottom: 17px;
+  }
+
+
+  /* CONTACT */
+
+  .site-footer__contact {
+    padding: 30px 0;
+  }
+
+  .site-footer__contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  /* SECONDARY */
+
+  .site-footer__secondary {
+    padding: 30px 0;
+  }
+
+  .site-footer__secondary-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .site-footer__legal-links {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .site-footer__social {
+    gap: 8px;
+  }
+
+  .site-footer__social a {
+    min-width: 80px;
+  }
+
+
+  /* COPYRIGHT */
+
+  .site-footer__bottom {
+    padding: 20px 0;
+  }
+
+  .site-footer__bottom p {
+    line-height: 1.5;
+  }
+
+}

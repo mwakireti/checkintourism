@@ -151,7 +151,6 @@ function ServiceDetails() {
 
         </div>
       </div>
-
     </section>
   );
 }

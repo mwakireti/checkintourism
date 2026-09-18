@@ -12,6 +12,7 @@ export const services = [
     slug: "flight-booking",
 
     title: "Flight Booking & Travel Advice",
+    footerTitle: "Flight Booking",
 
     tagline: "Fly with confidence.",
 
@@ -44,6 +45,7 @@ export const services = [
     title: "Hotel Reservations",
 
     tagline: "Stay somewhere you'll love.",
+    footerTitle: "Hotel Reservations",
 
     shortDescription:
       "We help travellers find suitable hotels and accommodation based on destination, comfort, location and budget.",
@@ -72,6 +74,7 @@ export const services = [
     slug: "tour-packages",
 
     title: "Tour Packages & Guides",
+    footerTitle: "Tour Packages",
 
     tagline: "Discover more. Travel better.",
 
@@ -103,6 +106,7 @@ export const services = [
     slug: "visa-services",
 
     title: "Visa Processing & Travel Documentation",
+    footerTitle: "Visa Assistance",
 
     tagline: "Get ready for your journey.",
 
@@ -136,6 +140,7 @@ export const services = [
     slug: "car-rentals",
 
     title: "Car Rentals",
+    footerTitle: "Car Rentals",
 
     tagline: "Your destination. Your way.",
 
@@ -167,6 +172,7 @@ export const services = [
     slug: "activity-bookings",
 
     title: "Activity Bookings",
+    footerTitle: "Activity Bookings",
 
     tagline: "Make every moment count.",
 
