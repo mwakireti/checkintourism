@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { contact } from "../../data/contact";
+import Icon from "./Icon";
 
 import { navigation } from "../../data/navigation";
 import { services } from "../../data/services";
@@ -101,27 +102,49 @@ function Footer() {
           </h3>
 
           <div className="site-footer__contact-grid">
-
             <div className="site-footer__contact-item">
-              <span>Phone</span>
-              <strong>{contact.phone.display}</strong>
+              <div className="site-footer__contact-icon">
+                <Icon name="phone" size={19} />
+              </div>
+
+              <div className="site-footer__contact-info">
+                <span>Phone</span>
+                <strong>{contact.phone.display}</strong>
+              </div>
             </div>
 
             <div className="site-footer__contact-item">
-              <span>WhatsApp</span>
-              <strong>{contact.whatsapp.display}</strong>
+              <div className="site-footer__contact-icon">
+                <Icon name="phone" size={19} />
+              </div>
+
+              <div className="site-footer__contact-info">
+                <span>WhatsApp</span>
+                <strong>{contact.whatsapp.display}</strong>
+              </div>
             </div>
 
             <div className="site-footer__contact-item">
-              <span>Email</span>
-              <strong>{contact.email.display}</strong>
+              <div className="site-footer__contact-icon">
+                <Icon name="mail" size={19} />
+              </div>
+
+              <div className="site-footer__contact-info">
+                <span>Email</span>
+                <strong>{contact.email.display}</strong>
+              </div>
             </div>
 
             <div className="site-footer__contact-item">
-              <span>Address</span>
-              <strong>{contact.address.display}</strong>
-            </div>
+              <div className="site-footer__contact-icon">
+                <Icon name="map-pin" size={19} />
+              </div>
 
+              <div className="site-footer__contact-info">
+                <span>Address</span>
+                <strong>{contact.address.display}</strong>
+              </div>
+            </div>
           </div>
 
         </div>
