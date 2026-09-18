@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Icon from "../common/Icon";
 
 function BookTripButton({ onClick }) {
   return (
@@ -7,7 +8,8 @@ function BookTripButton({ onClick }) {
       to="/book"
       onClick={onClick}
     >
-      Book a Trip
+      <Icon name="calendar" size={17} />
+      <span>Book a Trip</span>
     </Link>
   );
 }

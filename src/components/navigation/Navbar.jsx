@@ -2,6 +2,7 @@ import { useState } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileMenu from "./MobileMenu";
 import Logo from "../common/Logo";
+import Icon from "../common/Icon";
 import BookTripButton from "./BookTripButton";
 import WhatsAppButton from "./WhatsAppButton";
 
@@ -20,14 +21,14 @@ function Navbar() {
     <header className="site-header">
       <nav className="site-header__nav">
         <div className="site-header__nav-content">
-           <div className="site-header__logo">
-          <Logo onClick={closeMobileMenu} />
-        </div>
+          <div className="site-header__logo">
+            <Logo onClick={closeMobileMenu} />
+          </div>
 
-        <div className="site-header__desktop">
-          <DesktopNav />
+          <div className="site-header__desktop">
+            <DesktopNav />
+          </div>
         </div>
-       </div>
         <div className="desktop-nav__actions">
           <BookTripButton />
           <WhatsAppButton />
@@ -39,7 +40,11 @@ function Navbar() {
           aria-label="Toggle navigation menu"
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? "✕" : "☰"}
+          {isMobileMenuOpen ? (
+            <Icon name="close" size={24} />
+          ) : (
+            <Icon name="menu" size={24} />
+          )}
         </button>
       </nav>
 
