@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { contact } from "../../data/contact";
 
 import { navigation } from "../../data/navigation";
 import { services } from "../../data/services";
@@ -103,22 +104,22 @@ function Footer() {
 
             <div className="site-footer__contact-item">
               <span>Phone</span>
-              <strong>+254 XXX XXX XXX</strong>
+              <strong>{contact.phone.display}</strong>
             </div>
 
             <div className="site-footer__contact-item">
               <span>WhatsApp</span>
-              <strong>+254 XXX XXX XXX</strong>
+              <strong>{contact.whatsapp.display}</strong>
             </div>
 
             <div className="site-footer__contact-item">
               <span>Email</span>
-              <strong>info@example.com</strong>
+              <strong>{contact.email.display}</strong>
             </div>
 
             <div className="site-footer__contact-item">
               <span>Address</span>
-              <strong>Coming Soon</strong>
+              <strong>{contact.address.display}</strong>
             </div>
 
           </div>
