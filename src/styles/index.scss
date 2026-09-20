@@ -151,6 +151,11 @@ body {
   padding-right: 24px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 @media (max-width: 1199px) {
   .site-header__nav {

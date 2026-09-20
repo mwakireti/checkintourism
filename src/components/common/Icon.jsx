@@ -23,6 +23,7 @@ const icons = {
   hotel: Hotel,
   map: Map,
   visa: FileText,
+  "file-text": FileText,
   car: Car,
   ticket: Ticket,
   phone: Phone,
