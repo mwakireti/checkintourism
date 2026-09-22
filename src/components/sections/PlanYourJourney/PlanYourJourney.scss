@@ -1,0 +1,118 @@
+@use "../../../styles/variables" as *;
+
+.plan-journey {
+  padding: 90px 0;
+  background: $brand-blue;
+}
+
+.plan-journey__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 55px 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.plan-journey__text {
+  max-width: 700px;
+}
+
+.plan-journey__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-journey__title {
+  margin: 0 0 18px;
+  color: $white;
+  font-size: 42px;
+  font-weight: $font-weight-bold;
+  line-height: $heading-line-height;
+}
+
+.plan-journey__description {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: $body-line-height;
+}
+
+.plan-journey__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.plan-journey__button {
+  min-width: 145px;
+  justify-content: center;
+}
+
+.plan-journey__button.button--primary {
+  border-color: $white;
+  background: $white;
+  color: $brand-blue;
+}
+
+.plan-journey__button.button--primary:hover {
+  border-color: $brand-green;
+  background: $brand-green;
+  color: $white;
+}
+
+.plan-journey__button.button--secondary {
+  border-color: $white;
+  background: transparent;
+  color: $white;
+}
+
+.plan-journey__button.button--secondary:hover {
+  border-color: $white;
+  background: $white;
+  color: $brand-blue;
+}
+
+@media (max-width: 900px) {
+  .plan-journey {
+    padding: 70px 0;
+  }
+
+  .plan-journey__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .plan-journey {
+    padding: 55px 0;
+  }
+
+  .plan-journey__content {
+    padding: 35px 25px;
+    border-radius: 14px;
+  }
+
+  .plan-journey__title {
+    font-size: 34px;
+  }
+
+  .plan-journey__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .plan-journey__button {
+    width: 100%;
+  }
+}
