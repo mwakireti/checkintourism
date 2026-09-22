@@ -1,21 +1,21 @@
 export const contact = {
   phone: {
-    display: "+254 XXX XXX XXX",
-    href: "tel:+254XXXXXXXXX",
+    display: "+256777093069",
+    href: "tel:+256777093069",
   },
 
   whatsapp: {
-    display: "+254 XXX XXX XXX",
-    href: "https://wa.me/254XXXXXXXXX",
+    display: "+256777093069",
+    href: "https://wa.me/+256777093069",
   },
 
   email: {
-    display: "info@example.com",
+    display: "checkinttl@gmail.com",
     href: "mailto:info@example.com",
   },
 
   address: {
-    display: "Coming Soon",
+    display: "P.O. Box 153461, \n Kampala GPO",
   },
 
   social: {

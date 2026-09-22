@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./Hero.scss";
 
 import heroImage1 from "../../../assets/images/hero/image1.jpg";
@@ -39,9 +41,8 @@ function Hero() {
       <div className="hero__background">
         {heroImages.map((image, index) => (
           <div
-            className={`hero__image ${
-              index === currentImage ? "hero__image--active" : ""
-            }`}
+            className={`hero__image ${index === currentImage ? "hero__image--active" : ""
+              }`}
             key={image}
             style={{
               backgroundImage: `url(${image})`,
@@ -73,25 +74,23 @@ function Hero() {
             </p>
 
             <div className="hero__actions">
-              <a
-                href="#plan-your-trip"
+              <Link
+                to="/book"
                 className="button button--primary"
               >
                 Plan Your Trip
-              </a>
+              </Link>
 
-              <a
-                href="#tours"
+              <Link
+                to="/tours"
                 className="button button--secondary"
               >
                 Explore Our Tours
-              </a>
+              </Link>
             </div>
-
           </div>
         </div>
       </div>
-
     </section>
   );
 }

@@ -8,6 +8,7 @@ import About from "../pages/About/About";
 import VisaServices from "../pages/VisaServices/VisaServices";
 import Destinations from "../pages/Destinations/Destinations";
 import Tours from "../pages/Tours/Tours";
+import Book from "../pages/book/Book";
 
 function AppRoutes() {
   return (
@@ -33,13 +34,16 @@ function AppRoutes() {
         <Route
           path="/visa-services"
           element={<VisaServices />} />
-        <Route 
+        <Route
           path="/destinations"
           element={<Destinations />}
         />
         <Route
           path="/tours"
           element={<Tours />} />
+        <Route
+          path="/book"
+          element={<Book />} />
       </Route>
     </Routes>
   );

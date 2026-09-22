@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo-dark.jpeg";
+import logo from "../../assets/images/checkin-logo-transparent.png";
 
 function Logo({ onClick }) {
   return (
