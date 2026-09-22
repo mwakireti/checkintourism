@@ -1,0 +1,134 @@
+@use "../../../styles/variables" as *;
+
+.booking-cta {
+  padding: 90px 0;
+
+  background: $brand-blue;
+}
+
+/* CONTENT */
+
+.booking-cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+/* EYEBROW */
+
+.booking-cta__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 1.5px;
+
+  color: $brand-green;
+}
+
+/* TITLE */
+
+.booking-cta__title {
+  margin: 0 0 20px;
+
+  font-size: 42px;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+
+  color: $white;
+}
+
+/* DESCRIPTION */
+
+.booking-cta__description {
+  max-width: 650px;
+
+  margin: 0 0 30px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* BUTTON */
+
+.booking-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 13px 24px;
+
+  border-radius: 6px;
+
+  background: $white;
+
+  font-size: 15px;
+  font-weight: $font-weight-semibold;
+
+  color: $brand-blue;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.booking-cta__button span {
+  font-size: 19px;
+
+  transition: transform 0.2s ease;
+}
+
+.booking-cta__button:hover {
+  gap: 13px;
+
+  background: $brand-green;
+  color: $white;
+}
+
+.booking-cta__button:hover span {
+  transform: translateX(3px);
+}
+
+/* TABLET */
+
+@media (max-width: 991px) {
+  .booking-cta {
+    padding: 75px 0;
+  }
+
+  .booking-cta__title {
+    font-size: 36px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .booking-cta {
+    padding: 60px 0;
+  }
+
+  .booking-cta__title {
+    font-size: 30px;
+  }
+
+  .booking-cta__description {
+    font-size: 15px;
+  }
+
+  .booking-cta__button {
+    padding: 12px 20px;
+  }
+}

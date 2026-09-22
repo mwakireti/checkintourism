@@ -202,3 +202,99 @@
     width: 100%;
   }
 }
+
+.book-page__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #eeeeee;
+}
+
+.book-page__contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.book-page__contact-label {
+  color: $text-color;
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.book-page__contact-item a {
+  color: $brand-blue;
+  font-size: 15px;
+  font-weight: $font-weight-medium;
+}
+
+.book-page__contact-item a:hover {
+  text-decoration: underline;
+}
+
+.book-page__contact-item p {
+  font-size: 14px;
+}
+
+.book-page__whatsapp {
+  width: 100%;
+  margin-top: 25px;
+  border: 1px solid $brand-green;
+  border-radius: 999px;
+  background: transparent;
+  color: $brand-green;
+}
+
+.book-page__whatsapp:hover {
+  background: $brand-green;
+  color: $white;
+}
+
+.book-page__note {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: $light-bg;
+}
+
+.book-page__note strong {
+  display: block;
+  margin-bottom: 7px;
+  color: $dark;
+  font-size: 14px;
+}
+
+.book-page__note p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.booking-form__status {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.booking-form__status--success {
+  border: 1px solid #b7df9d;
+  background: #f0f9eb;
+  color: #3f7d22;
+}
+
+.booking-form__status--error {
+  border: 1px solid #f0b8b8;
+  background: #fff4f4;
+  color: #b42318;
+}
+
+.booking-form__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
