@@ -1,9 +1,9 @@
-import heroImage1 from "../assets/images/hero/image1.jpg";
+import heroImage1 from "../assets/images/services/image1.jpg";
 import heroImage2 from "../assets/images/hero/image2.jpg";
 import heroImage3 from "../assets/images/hero/image3.jpg";
 import heroImage4 from "../assets/images/hero/image4.jpg";
-import heroImage5 from "../assets/images/hero/image4.jpg";
-import heroImage6 from "../assets/images/hero/image4.jpg";
+import heroImage5 from "../assets/images/hero/image5.jpg";
+import heroImage6 from "../assets/images/hero/image6.jpg";
 
 export const services = [
   {
@@ -151,7 +151,7 @@ export const services = [
     description:
       "Choose convenient transportation for business trips, holidays, transfers and exploration. We help you find transportation options suited to your plans, whether you need a vehicle for a short trip, an extended stay or airport transportation.",
 
-    image: heroImage1,
+    image: heroImage6,
 
     features: [
       "Short-term rentals",
@@ -182,7 +182,7 @@ export const services = [
     description:
       "Enhance your trip with activities and experiences at your destination. From wildlife and adventure experiences to cultural activities, excursions and attractions, we can help you discover ways to make your journey more memorable.",
 
-    image: heroImage6,
+    image: heroImage5,
 
     features: [
       "Wildlife experiences",
