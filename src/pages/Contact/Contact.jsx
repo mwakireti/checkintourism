@@ -1,9 +1,70 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Contact.scss";
 import Icon from "../../components/common/Icon";
 import { contact } from "../../data/contact";
 
 function Contact() {
+const [isSubmitting, setIsSubmitting] = useState(false);
+
+const [status, setStatus] = useState({
+  type: "",
+  message: "",
+});
+  
+  const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  setIsSubmitting(true);
+
+  setStatus({
+    type: "",
+    message: "",
+  });
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const contactData = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch("/api/send-contact.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(contactData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message ||
+          "Something went wrong. Please try again."
+      );
+    }
+
+    setStatus({
+      type: "success",
+      message:
+        "Thank you. Your message has been sent successfully. Our team will get back to you soon.",
+    });
+
+    form.reset();
+  } catch (error) {
+    setStatus({
+      type: "error",
+      message:
+        error.message ||
+        "We could not send your message. Please try again.",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
   return (
     <section className="contact-page">
       {/* PAGE HEADER */}
@@ -151,7 +212,10 @@ function Contact() {
                 </p>
               </div>
 
-              <form className="contact-page__form">
+             <form
+  className="contact-page__form"
+  onSubmit={handleSubmit}
+>
 
                 <div className="contact-page__form-row">
                   <div className="contact-page__field">
@@ -164,6 +228,7 @@ function Contact() {
                       name="name"
                       type="text"
                       placeholder="Your full name"
+                      required
                     />
                   </div>
 
@@ -177,6 +242,7 @@ function Contact() {
                       name="email"
                       type="email"
                       placeholder="Your email address"
+                      required
                     />
                   </div>
                 </div>
@@ -192,6 +258,7 @@ function Contact() {
                       name="phone"
                       type="tel"
                       placeholder="Your phone number"
+                      required
                     />
                   </div>
 
@@ -263,16 +330,26 @@ function Contact() {
                     name="message"
                     rows="6"
                     placeholder="Tell us about your travel plans..."
+                    required
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="button button--primary contact-page__submit"
-                >
-                  Send Message
-                  <span>→</span>
-                </button>
+                {status.message && (
+  <div
+    className={`contact-page__status contact-page__status--${status.type}`}
+    role="alert"
+  >
+    {status.message}
+  </div>
+)}
+
+             <button
+  type="submit"
+  className="button button--primary contact-page__submit"
+  disabled={isSubmitting}
+>
+  {isSubmitting ? "Sending..." : "Send Message"}
+</button>
 
               </form>
             </div>

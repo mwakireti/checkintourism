@@ -5,7 +5,7 @@ export const contact = {
   },
 
   whatsapp: {
-    display: "+256777093069",
+    display: "256777093069",
     href: "https://wa.me/+256777093069",
   },
 

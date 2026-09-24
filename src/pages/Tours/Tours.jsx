@@ -6,39 +6,39 @@ import "./Tours.scss";
 function Tours() {
   return (
     <div className="tours-page">
-   <header className="tours-page__header">
-  <div className="container">
-    <div className="tours-page__header-content">
+      <header className="tours-page__header">
+        <div className="container">
+          <div className="tours-page__header-content">
 
-      <div className="tours-page__breadcrumb">
-        <Link to="/">Home</Link>
-        <span>/</span>
-        <span>Tours & Packages</span>
-      </div>
+            <div className="tours-page__breadcrumb">
+              <Link to="/">Home</Link>
+              <span>/</span>
+              <span>Tours & Packages</span>
+            </div>
 
-      <span className="tours-page__eyebrow">
-        TOURS & PACKAGES
-      </span>
+            <span className="tours-page__eyebrow">
+              TOURS & PACKAGES
+            </span>
 
-      <h1 className="tours-page__title">
-        Explore More. Experience More.
-      </h1>
+            <h1 className="tours-page__title">
+              Explore More. Experience More.
+            </h1>
 
-      <p className="tours-page__subtitle">
-        Discover carefully planned travel experiences designed to help
-        you explore new destinations, create memories and enjoy your
-        journey with confidence.
-      </p>
+            <p className="tours-page__subtitle">
+              Discover carefully planned travel experiences designed to help
+              you explore new destinations, create memories and enjoy your
+              journey with confidence.
+            </p>
 
-    </div>
-  </div>
-</header>
+          </div>
+        </div>
+      </header>
 
       {/* Introduction */}
       <section className="tours-page__intro">
         <div className="container">
           <div className="tours-page__intro-grid">
-             <div className="tours-page__intro-image">
+            <div className="tours-page__intro-image">
               <img
                 src="/src/assets/images/tours/coastal.jpg"
                 alt="Travel experience"
@@ -74,7 +74,7 @@ function Tours() {
               </Link>
             </div>
 
-           
+
 
           </div>
         </div>

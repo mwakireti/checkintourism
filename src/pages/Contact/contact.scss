@@ -851,3 +851,30 @@
     width: 100%;
   }
 }
+
+
+.contact-page__status {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-page__status--success {
+  border: 1px solid #b7df9d;
+  background: #f0f9eb;
+  color: #3f7d22;
+}
+
+.contact-page__status--error {
+  border: 1px solid #f0b8b8;
+  background: #fff4f4;
+  color: #b42318;
+}
+
+.contact-page__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
