@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import "./DestinationsPreview.scss";
+import kenya from "../../../assets/images/destinations/kenya.jpg"
+import tanzania from "../../../assets/images/destinations/tanzania.jpg"
+import rwanda from "../../../assets/images/destinations/rwanda.jpg"
+import dubai from "../../../assets/images/destinations/dubai.jpg"
 
 const destinations = [
   {
@@ -7,28 +11,28 @@ const destinations = [
     region: "East Africa",
     description:
       "Discover incredible wildlife, beautiful landscapes and unforgettable safari experiences.",
-    image: "/src/assets/images/destinations/kenya.jpg",
+    image: kenya,
   },
   {
     name: "Tanzania",
     region: "East Africa",
     description:
       "Experience iconic wildlife, the Serengeti and the beauty of Zanzibar.",
-    image: "/src/assets/images/destinations/tanzania.jpg",
+    image: tanzania,
   },
   {
     name: "Rwanda",
     region: "East Africa",
     description:
       "Explore Rwanda's beautiful landscapes, wildlife and vibrant culture.",
-    image: "/src/assets/images/destinations/rwanda.jpg",
+    image: rwanda,
   },
   {
     name: "Dubai",
     region: "Middle East",
     description:
       "Enjoy a blend of modern attractions, shopping, luxury and adventure.",
-    image: "/src/assets/images/destinations/dubai.jpg",
+    image: dubai,
   },
 ];
 
