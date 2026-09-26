@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/common/Icon";
 import { tours } from "../../data/tours";
+import introImage from "../../assets/images/tours/coastal.jpg"
 import "./Tours.scss";
 
 function Tours() {
@@ -40,7 +41,7 @@ function Tours() {
           <div className="tours-page__intro-grid">
             <div className="tours-page__intro-image">
               <img
-                src="/src/assets/images/tours/coastal.jpg"
+                src= {introImage}
                 alt="Travel experience"
               />
             </div>

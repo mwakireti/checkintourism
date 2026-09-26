@@ -1,3 +1,10 @@
+import safari from "../assets/images/tours/safari.jpg"
+import coastal from "../assets/images/tours/coastal.jpg"
+import eastAfrica from "../assets/images/tours/east-africa.jpg"
+import dubai from "../assets/images/tours/dubai.jpg"
+import tanzania from "../assets/images/tours/tanzania.jpg"
+import rwanda from "../assets/images/tours/rwanda.jpg"
+
 export const tours = [
   {
     id: 1,
@@ -7,7 +14,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Discover unforgettable wildlife experiences, beautiful landscapes and memorable moments across Kenya.",
-    image: "/src/assets/images/tours/safari.jpg",
+    image: safari,
     category: "Safari & Wildlife",
   },
 
@@ -19,7 +26,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Relax along Kenya's beautiful coast while enjoying a combination of beaches, culture and leisure.",
-    image: "/src/assets/images/tours/coastal.jpg",
+    image: coastal,
     category: "Beach & Coastal",
   },
 
@@ -31,7 +38,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Explore memorable destinations, landscapes and experiences across East Africa.",
-    image: "/src/assets/images/tours/east-africa.jpg",
+    image: eastAfrica,
     category: "Adventure",
   },
 
@@ -43,7 +50,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Experience a dynamic destination combining modern attractions, entertainment, shopping and leisure.",
-    image: "/src/assets/images/tours/dubai.jpg",
+    image: dubai,
     category: "City & Leisure",
   },
 
@@ -55,7 +62,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Experience remarkable landscapes, wildlife and memorable travel experiences in Tanzania.",
-    image: "/src/assets/images/tours/tanzania.jpg",
+    image: tanzania,
     category: "Safari & Wildlife",
   },
 
@@ -67,7 +74,7 @@ export const tours = [
     duration: "Custom Package",
     description:
       "Discover scenic landscapes, culture and memorable experiences in the heart of East Africa.",
-    image: "/src/assets/images/tours/rwanda.jpg",
+    image: rwanda,
     category: "Adventure",
   },
 ];
