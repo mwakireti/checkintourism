@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 import Icon from "../../components/common/Icon";
+import destinationsIntro from "../../assets/images/destinations/destinations-intro.jpg"
+import kenya from "../../assets/images/destinations/kenya.jpg"
+import tanzania from "../../assets/images/destinations/tanzania.jpg"
+import uganda from "../../assets/images/destinations/uganda.jpg"
+import rwanda from "../../assets/images/destinations/rwanda.jpg"
+import dubai from "../../assets/images/destinations/dubai.jpg"
+import uae from "../../assets/images/destinations/uae.jpg"
 import "./Destinations.scss";
 
 const destinations = [
@@ -9,7 +16,7 @@ const destinations = [
     region: "East Africa",
     description:
       "Discover diverse landscapes, vibrant cities, beautiful coastlines and unforgettable wildlife experiences across Kenya.",
-    image: "/src/assets/images/destinations/kenya.jpg",
+    image: kenya,
   },
   {
     id: 2,
@@ -17,7 +24,7 @@ const destinations = [
     region: "East Africa",
     description:
       "Experience remarkable wildlife, breathtaking landscapes and the tropical beauty of Tanzania and Zanzibar.",
-    image: "/src/assets/images/destinations/tanzania.jpg",
+    image: tanzania,
   },
   {
     id: 3,
@@ -25,7 +32,7 @@ const destinations = [
     region: "East Africa",
     description:
       "Explore beautiful scenery, rich wildlife and memorable cultural experiences in the Pearl of Africa.",
-    image: "/src/assets/images/destinations/uganda.jpg",
+    image: uganda,
   },
   {
     id: 4,
@@ -33,7 +40,7 @@ const destinations = [
     region: "East Africa",
     description:
       "Discover Rwanda's scenic landscapes, vibrant culture and remarkable experiences in a welcoming destination.",
-    image: "/src/assets/images/destinations/rwanda.jpg",
+    image: rwanda,
   },
   {
     id: 5,
@@ -41,7 +48,7 @@ const destinations = [
     region: "Middle East",
     description:
       "Enjoy a blend of modern attractions, shopping, entertainment, luxury and unforgettable city experiences.",
-    image: "/src/assets/images/destinations/dubai.jpg",
+    image: dubai,
   },
   {
     id: 6,
@@ -49,7 +56,7 @@ const destinations = [
     region: "Middle East",
     description:
       "Explore dynamic cities, remarkable architecture, cultural experiences and exciting opportunities across the UAE.",
-    image: "/src/assets/images/destinations/uae.jpg",
+    image: uae,
   },
 ];
 
@@ -128,7 +135,7 @@ function Destinations() {
 
             <div className="destinations-page__intro-image">
               <img
-                src="/src/assets/images/destinations/destinations-intro.jpg"
+                src={destinationsIntro}
                 alt="Beautiful travel destination"
               />
             </div>
