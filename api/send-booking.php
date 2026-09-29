@@ -9,19 +9,8 @@ require __DIR__ . '/vendor/autoload.php';
 // Load mail configuration
 $mailConfig = require __DIR__ . '/config/mail.php';
 
-header("Content-Type: application/json; charset=UTF-8");
-
-// Only allow POST requests
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    http_response_code(405);
-
-    echo json_encode([
-        "success" => false,
-        "message" => "Method not allowed."
-    ]);
-
-    exit;
-}
+// Use the BOOKING mail configuration
+$bookingMail = $mailConfig["booking"];
 
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -39,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 // Read JSON request body
 $rawInput = file_get_contents("php://input");
-
 $input = json_decode($rawInput, true);
 
 if (!is_array($input)) {
@@ -58,6 +46,7 @@ $fullName = trim($input["fullName"] ?? "");
 $email = trim($input["email"] ?? "");
 $phone = trim($input["phone"] ?? "");
 $destination = trim($input["destination"] ?? "");
+
 $departureDate = trim($input["departureDate"] ?? "");
 $returnDate = trim($input["returnDate"] ?? "");
 $travellers = trim($input["travellers"] ?? "");
@@ -155,32 +144,31 @@ try {
     // SMTP
     $mail->isSMTP();
 
-    $mail->Host = $mailConfig["host"];
+    $mail->Host = $bookingMail["host"];
     $mail->SMTPAuth = true;
+    $mail->Username = $bookingMail["username"];
+    $mail->Password = $bookingMail["password"];
 
-    $mail->Username = $mailConfig["username"];
-    $mail->Password = $mailConfig["password"];
-
-    if ($mailConfig["encryption"] === "ssl") {
+    if ($bookingMail["encryption"] === "ssl") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     } else {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     }
 
-    $mail->Port = (int) $mailConfig["port"];
+    $mail->Port = (int) $bookingMail["port"];
 
     // Character encoding
     $mail->CharSet = "UTF-8";
 
     // Sender
     $mail->setFrom(
-        $mailConfig["from_email"],
-        $mailConfig["from_name"]
+        $bookingMail["from_email"],
+        $bookingMail["from_name"]
     );
 
     // Recipient
     $mail->addAddress(
-        $mailConfig["to_email"]
+        $bookingMail["to_email"]
     );
 
     // Customer's email becomes Reply-To
