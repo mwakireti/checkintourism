@@ -1,28 +1,5 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Composer autoloader
-require __DIR__ . '/vendor/autoload.php';
-
-// Load mail configuration
-$mailConfig = require __DIR__ . '/config/mail.php';
-
-header("Content-Type: application/json; charset=UTF-8");
-
-// Only allow POST requests
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    http_response_code(405);
-
-    echo json_encode([
-        "success" => false,
-        "message" => "Method not allowed."
-    ]);
-
-    exit;
-}
-
 header("Content-Type: application/json; charset=UTF-8");
 
 // Only allow POST requests
@@ -53,7 +30,13 @@ if (!is_array($input)) {
     exit;
 }
 
-// Get form values
+
+/*
+|--------------------------------------------------------------------------
+| Get form values
+|--------------------------------------------------------------------------
+*/
+
 $fullName = trim($input["fullName"] ?? "");
 $email = trim($input["email"] ?? "");
 $phone = trim($input["phone"] ?? "");
@@ -64,7 +47,13 @@ $travellers = trim($input["travellers"] ?? "");
 $tripType = trim($input["tripType"] ?? "");
 $message = trim($input["message"] ?? "");
 
-// Basic validation
+
+/*
+|--------------------------------------------------------------------------
+| Basic validation
+|--------------------------------------------------------------------------
+*/
+
 if (
     $fullName === "" ||
     $email === "" ||
@@ -81,6 +70,7 @@ if (
     exit;
 }
 
+
 // Validate email
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(422);
@@ -93,7 +83,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Length validation
+
+// Prevent excessively long input
 if (strlen($fullName) > 150) {
     http_response_code(422);
 
@@ -127,95 +118,97 @@ if (strlen($message) > 5000) {
     exit;
 }
 
-// Build email body
+
+/*
+|--------------------------------------------------------------------------
+| Email configuration
+|--------------------------------------------------------------------------
+*/
+
+$to = "sales@checkintourism.com";
+
+$subject = "New Travel Booking Request - Check In Travel & Tours";
+
+
+/*
+|--------------------------------------------------------------------------
+| Build email
+|--------------------------------------------------------------------------
+*/
+
 $emailBody = "NEW TRAVEL BOOKING REQUEST\n\n";
 
 $emailBody .= "CUSTOMER DETAILS\n";
 $emailBody .= "----------------\n";
+
 $emailBody .= "Full Name: " . $fullName . "\n";
 $emailBody .= "Email: " . $email . "\n";
 $emailBody .= "Phone / WhatsApp: " . $phone . "\n\n";
 
+
 $emailBody .= "TRIP DETAILS\n";
 $emailBody .= "------------\n";
+
 $emailBody .= "Destination: " . $destination . "\n";
 $emailBody .= "Departure Date: " . ($departureDate ?: "Not provided") . "\n";
 $emailBody .= "Return Date: " . ($returnDate ?: "Not provided") . "\n";
 $emailBody .= "Travellers: " . ($travellers ?: "Not provided") . "\n";
 $emailBody .= "Trip Type: " . ($tripType ?: "Not provided") . "\n\n";
 
+
 $emailBody .= "ADDITIONAL INFORMATION\n";
 $emailBody .= "----------------------\n";
+
 $emailBody .= ($message ?: "No additional information provided.") . "\n";
 
-try {
 
-    $mail = new PHPMailer(true);
+/*
+|--------------------------------------------------------------------------
+| Email headers
+|--------------------------------------------------------------------------
+*/
 
-    // SMTP
-    $mail->isSMTP();
+$headers = [];
 
-    $mail->Host = $mailConfig["host"];
-    $mail->SMTPAuth = true;
+$headers[] = "From: Check In Travel & Tours <sales@checkintourism.com>";
+$headers[] = "Reply-To: " . $email;
+$headers[] = "MIME-Version: 1.0";
+$headers[] = "Content-Type: text/plain; charset=UTF-8";
 
-    $mail->Username = $mailConfig["username"];
-    $mail->Password = $mailConfig["password"];
 
-    if ($mailConfig["encryption"] === "ssl") {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    } else {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    }
+/*
+|--------------------------------------------------------------------------
+| Send email
+|--------------------------------------------------------------------------
+*/
 
-    $mail->Port = (int) $mailConfig["port"];
+$mailSent = mail(
+    $to,
+    $subject,
+    $emailBody,
+    implode("\r\n", $headers)
+);
 
-    // Character encoding
-    $mail->CharSet = "UTF-8";
 
-    // Sender
-    $mail->setFrom(
-        $mailConfig["from_email"],
-        $mailConfig["from_name"]
-    );
+/*
+|--------------------------------------------------------------------------
+| Handle result
+|--------------------------------------------------------------------------
+*/
 
-    // Recipient
-    $mail->addAddress(
-        $mailConfig["to_email"]
-    );
-
-    // Customer's email becomes Reply-To
-    $mail->addReplyTo(
-        $email,
-        $fullName
-    );
-
-    // Email content
-    $mail->isHTML(false);
-
-    $mail->Subject =
-        "New Travel Booking Request - Check In Travel & Tours";
-
-    $mail->Body = $emailBody;
-
-    // Send email
-    $mail->send();
-
-    echo json_encode([
-        "success" => true,
-        "message" => "Your trip request has been sent successfully."
-    ]);
-
-} catch (Exception $e) {
-
-    error_log(
-        "Booking email error: " . $mail->ErrorInfo
-    );
-
+if (!$mailSent) {
     http_response_code(500);
 
     echo json_encode([
         "success" => false,
-        "message" =>
-            "We could not send your request. Please try again later."
+        "message" => "We could not send your request. Please try again later."
     ]);
+
+    exit;
 }
+
+
+echo json_encode([
+    "success" => true,
+    "message" => "Your trip request has been sent successfully."
+]);
