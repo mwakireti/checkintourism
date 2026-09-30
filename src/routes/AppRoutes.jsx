@@ -9,6 +9,7 @@ import VisaServices from "../pages/VisaServices/VisaServices";
 import Destinations from "../pages/Destinations/Destinations";
 import Tours from "../pages/Tours/Tours";
 import Book from "../pages/book/Book";
+import LegalPolicy from "../pages/LegalPolicy/LegalPolicy";
 
 function AppRoutes() {
   return (
@@ -44,6 +45,9 @@ function AppRoutes() {
         <Route
           path="/book"
           element={<Book />} />
+        <Route
+          path="/legal-policy"
+          element={<LegalPolicy />} />
       </Route>
     </Routes>
   );

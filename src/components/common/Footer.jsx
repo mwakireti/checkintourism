@@ -164,7 +164,7 @@ function Footer() {
               </h3>
 
               <nav className="site-footer__legal-links">
-                <Link to="/privacy-policy">
+                <Link to="/legal-policy">
                   Privacy Policy
                 </Link>
 

@@ -1,0 +1,205 @@
+@use "../../styles/variables" as *;
+
+.legal-policy-page {
+  background: $white;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.legal-policy-page__header {
+  padding: 150px 0 85px;
+  background: $light-bg;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.legal-policy-page__header-content {
+  max-width: 820px;
+}
+
+.legal-policy-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: $text-color;
+}
+
+.legal-policy-page__breadcrumb a {
+  color: $brand-blue;
+  transition: color 0.2s ease;
+}
+
+.legal-policy-page__breadcrumb a:hover {
+  color: $brand-green;
+}
+
+.legal-policy-page__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.12em;
+  color: $brand-blue;
+}
+
+.legal-policy-page__title {
+  margin: 0 0 18px;
+  font-size: 52px;
+  line-height: $heading-line-height;
+  font-weight: $font-weight-bold;
+  color: $dark;
+}
+
+.legal-policy-page__subtitle {
+  max-width: 700px;
+  margin: 0;
+  font-size: 18px;
+  line-height: $body-line-height;
+  color: $text-color;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.legal-policy-page__content {
+  padding: 85px 0 100px;
+}
+
+.legal-policy-page__article {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.legal-policy-page__article > p {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: $text-color;
+}
+
+.legal-policy-page__section {
+  margin-top: 52px;
+}
+
+.legal-policy-page__section h2 {
+  margin: 0 0 18px;
+  font-size: 27px;
+  line-height: 1.3;
+  font-weight: $font-weight-semibold;
+  color: $dark;
+}
+
+.legal-policy-page__section p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: $text-color;
+}
+
+.legal-policy-page__section ul {
+  margin: 18px 0 0;
+  padding-left: 24px;
+}
+
+.legal-policy-page__section li {
+  margin-bottom: 12px;
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: $text-color;
+}
+
+.legal-policy-page__section li::marker {
+  color: $brand-blue;
+}
+
+.legal-policy-page__section strong {
+  color: $dark;
+  font-weight: $font-weight-semibold;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+  .legal-policy-page__header {
+    padding: 135px 0 70px;
+  }
+
+  .legal-policy-page__title {
+    font-size: 44px;
+  }
+
+  .legal-policy-page__content {
+    padding: 70px 0 80px;
+  }
+
+  .legal-policy-page__section {
+    margin-top: 44px;
+  }
+
+  .legal-policy-page__section h2 {
+    font-size: 25px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .legal-policy-page__header {
+    padding: 120px 0 55px;
+  }
+
+  .legal-policy-page__breadcrumb {
+    margin-bottom: 22px;
+    font-size: 13px;
+  }
+
+  .legal-policy-page__eyebrow {
+    font-size: 12px;
+  }
+
+  .legal-policy-page__title {
+    margin-bottom: 15px;
+    font-size: 36px;
+  }
+
+  .legal-policy-page__subtitle {
+    font-size: 16px;
+  }
+
+  .legal-policy-page__content {
+    padding: 55px 0 65px;
+  }
+
+  .legal-policy-page__article > p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .legal-policy-page__section {
+    margin-top: 38px;
+  }
+
+  .legal-policy-page__section h2 {
+    margin-bottom: 15px;
+    font-size: 23px;
+  }
+
+  .legal-policy-page__section p,
+  .legal-policy-page__section li {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .legal-policy-page__section ul {
+    padding-left: 20px;
+  }
+}
