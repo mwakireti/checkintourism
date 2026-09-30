@@ -5,64 +5,82 @@ import Icon from "../../components/common/Icon";
 import { contact } from "../../data/contact";
 
 function Contact() {
-const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-const [status, setStatus] = useState({
-  type: "",
-  message: "",
-});
-  
-  const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  setIsSubmitting(true);
-
-  setStatus({
+  const [status, setStatus] = useState({
     type: "",
     message: "",
   });
 
-  const form = event.currentTarget;
-  const formData = new FormData(form);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const contactData = Object.fromEntries(formData.entries());
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch("/api/send-contact.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(contactData),
+    setStatus({
+      type: "",
+      message: "",
     });
 
-    const result = await response.json();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const contactData = Object.fromEntries(formData.entries());
 
-    if (!response.ok || !result.success) {
-      throw new Error(
-        result.message ||
+    try {
+      const response = await fetch("/api/send-contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message ||
           "Something went wrong. Please try again."
-      );
+        );
+      }
+
+      setStatus({
+        type: "success",
+        message:
+          "Thank you. Your message has been sent successfully. Our team will get back to you soon.",
+      });
+
+      form.reset();
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setStatus({
+          type: "",
+          message: "",
+        });
+      }, 5000);
+
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error.message ||
+          "We could not send your message. Please try again.",
+      });
+
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        setStatus({
+          type: "",
+          message: "",
+        });
+      }, 5000);
+
+    } finally {
+      setIsSubmitting(false);
     }
+  };
 
-    setStatus({
-      type: "success",
-      message:
-        "Thank you. Your message has been sent successfully. Our team will get back to you soon.",
-    });
-
-    form.reset();
-  } catch (error) {
-    setStatus({
-      type: "error",
-      message:
-        error.message ||
-        "We could not send your message. Please try again.",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
 
 
   return (
@@ -212,10 +230,10 @@ const [status, setStatus] = useState({
                 </p>
               </div>
 
-             <form
-  className="contact-page__form"
-  onSubmit={handleSubmit}
->
+              <form
+                className="contact-page__form"
+                onSubmit={handleSubmit}
+              >
 
                 <div className="contact-page__form-row">
                   <div className="contact-page__field">
@@ -335,21 +353,21 @@ const [status, setStatus] = useState({
                 </div>
 
                 {status.message && (
-  <div
-    className={`contact-page__status contact-page__status--${status.type}`}
-    role="alert"
-  >
-    {status.message}
-  </div>
-)}
+                  <div
+                    className={`contact-page__status contact-page__status--${status.type}`}
+                    role="alert"
+                  >
+                    {status.message}
+                  </div>
+                )}
 
-             <button
-  type="submit"
-  className="button button--primary contact-page__submit"
-  disabled={isSubmitting}
->
-  {isSubmitting ? "Sending..." : "Send Message"}
-</button>
+                <button
+                  type="submit"
+                  className="button button--primary contact-page__submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
 
               </form>
             </div>

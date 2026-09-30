@@ -21,57 +21,71 @@ const handleSubmit = async (event) => {
   const form = event.currentTarget;
   const formData = new FormData(form);
   const bookingData = Object.fromEntries(formData.entries());
+  try {
+  const response = await fetch("/api/send-booking.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bookingData),
+  });
+
+  const responseText = await response.text();
+
+  console.log("HTTP status:", response.status);
+  console.log("Raw server response:", responseText);
+
+  let result;
 
   try {
-    const response = await fetch("/api/send-booking.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bookingData),
-    });
-
-    const result = await response.json();
-
-    if (!response.ok || !result.success) {
-      throw new Error(
-        result.message || "Something went wrong. Please try again."
-      );
-    }
-
-    setStatus({
-      type: "success",
-      message:
-        "Thank you. Your trip request has been sent successfully. Our team will get back to you soon.",
-    });
-
-    form.reset();
-
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-      setStatus({
-        type: "",
-        message: "",
-      });
-    }, 5000);
-  } catch (error) {
-    setStatus({
-      type: "error",
-      message:
-        error.message ||
-        "We could not send your request. Please try again.",
-    });
-
-    // Hide error message after 5 seconds
-    setTimeout(() => {
-      setStatus({
-        type: "",
-        message: "",
-      });
-    }, 5000);
-  } finally {
-    setIsSubmitting(false);
+    result = JSON.parse(responseText);
+  } catch (jsonError) {
+    throw new Error(
+      `Server returned an invalid response (${response.status}): ${
+        responseText || "Empty response"
+      }`
+    );
   }
+
+  if (!response.ok || !result.success) {
+    throw new Error(
+      result.message || "Something went wrong. Please try again."
+    );
+  }
+
+  setStatus({
+    type: "success",
+    message:
+      "Thank you. Your trip request has been sent successfully. Our team will get back to you soon.",
+  });
+
+  form.reset();
+
+  setTimeout(() => {
+    setStatus({
+      type: "",
+      message: "",
+    });
+  }, 5000);
+} catch (error) {
+  console.error("Booking form error:", error);
+
+  setStatus({
+    type: "error",
+    message:
+      error.message ||
+      "We could not send your request. Please try again.",
+  });
+
+  setTimeout(() => {
+    setStatus({
+      type: "",
+      message: "",
+    });
+  }, 5000);
+} finally {
+  setIsSubmitting(false);
+}
 };
 
 
