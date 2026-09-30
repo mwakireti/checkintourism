@@ -10,8 +10,8 @@ export const contact = {
   },
 
   email: {
-    display: "checkinttl@gmail.com",
-    href: "mailto:info@example.com",
+    display: "info@checkintourism.com",
+    href: "mailto:info@checkintourism.com",
   },
 
   address: {
