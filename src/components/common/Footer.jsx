@@ -168,7 +168,7 @@ function Footer() {
                   Privacy Policy
                 </Link>
 
-                <Link to="/terms">
+                <Link to="/terms-conditions">
                   Terms & Conditions
                 </Link>
 

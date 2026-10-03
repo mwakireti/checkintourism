@@ -10,6 +10,8 @@ import Destinations from "../pages/Destinations/Destinations";
 import Tours from "../pages/Tours/Tours";
 import Book from "../pages/book/Book";
 import LegalPolicy from "../pages/LegalPolicy/LegalPolicy";
+import TermsConditions from "../pages/TermsConditions/TermsConditions";
+import CookiePolicy from "../pages/CookiePolicy/CookiePolicy";
 
 function AppRoutes() {
   return (
@@ -48,6 +50,12 @@ function AppRoutes() {
         <Route
           path="/legal-policy"
           element={<LegalPolicy />} />
+        <Route
+          path="/terms-conditions"
+          element={<TermsConditions />} />
+        <Route
+          path="/cookie-policy"
+          element={< CookiePolicy  />} />
       </Route>
     </Routes>
   );
