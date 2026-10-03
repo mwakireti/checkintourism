@@ -176,13 +176,13 @@ function Footer() {
                   Cookie Policy
                 </Link>
 
-                <Link to="/visa-disclaimer">
-                  Visa Disclaimer
+                <Link to="/travel-insurance">
+                  Travel Insurance
                 </Link>
 
-                <Link to="/booking-cancellation">
+                {/* <Link to="/booking-cancellation">
                   Booking & Cancellation Policy
-                </Link>
+                </Link> */}
               </nav>
             </div>
 

@@ -12,6 +12,7 @@ import Book from "../pages/book/Book";
 import LegalPolicy from "../pages/LegalPolicy/LegalPolicy";
 import TermsConditions from "../pages/TermsConditions/TermsConditions";
 import CookiePolicy from "../pages/CookiePolicy/CookiePolicy";
+import TravelInsurance from "../pages/TravelInsurance/TravelInsurance";
 
 function AppRoutes() {
   return (
@@ -56,6 +57,9 @@ function AppRoutes() {
         <Route
           path="/cookie-policy"
           element={< CookiePolicy  />} />
+        <Route
+          path="/travel-insurance"
+          element={<  TravelInsurance  />} />
       </Route>
     </Routes>
   );

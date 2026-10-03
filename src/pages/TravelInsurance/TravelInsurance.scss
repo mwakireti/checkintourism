@@ -1,0 +1,132 @@
+@use "../../styles/variables" as *;
+
+.travel-insurance-page {
+  background: $white;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.travel-insurance-page__header {
+  padding: 145px 0 70px;
+  background: $light-bg;
+}
+
+.travel-insurance-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.travel-insurance-page__breadcrumb a {
+  color: $brand-blue;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.travel-insurance-page__breadcrumb a:hover {
+  color: $brand-green;
+}
+
+.travel-insurance-page__heading {
+  max-width: 820px;
+}
+
+.travel-insurance-page__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: $brand-blue;
+  font-size: 13px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.travel-insurance-page__heading h1 {
+  margin: 0 0 16px;
+  color: $dark;
+  font-size: 48px;
+  font-weight: $font-weight-bold;
+  line-height: 1.15;
+}
+
+.travel-insurance-page__heading p {
+  max-width: 720px;
+  margin: 0;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.travel-insurance-page__content {
+  padding: 80px 0 100px;
+  background: $white;
+}
+
+.travel-insurance-page__article {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.travel-insurance-page__article p {
+  margin: 0 0 22px;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.travel-insurance-page__article h2 {
+  margin: 42px 0 18px;
+  color: $dark;
+  font-size: 22px;
+  font-weight: $font-weight-semibold;
+  line-height: 1.4;
+}
+
+.travel-insurance-page__article h2:first-child {
+  margin-top: 0;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .travel-insurance-page__header {
+    padding: 120px 0 55px;
+  }
+
+  .travel-insurance-page__breadcrumb {
+    margin-bottom: 24px;
+  }
+
+  .travel-insurance-page__heading h1 {
+    font-size: 38px;
+  }
+
+  .travel-insurance-page__heading p {
+    font-size: 16px;
+  }
+
+  .travel-insurance-page__content {
+    padding: 55px 0 70px;
+  }
+
+  .travel-insurance-page__article p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .travel-insurance-page__article h2 {
+    margin-top: 34px;
+    font-size: 20px;
+  }
+}
