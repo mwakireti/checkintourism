@@ -7,6 +7,7 @@ import uganda from "../../assets/images/destinations/uganda.jpg"
 import rwanda from "../../assets/images/destinations/rwanda.jpg"
 import dubai from "../../assets/images/destinations/dubai.jpg"
 import uae from "../../assets/images/destinations/uae.jpg"
+import SEO from "../../components/common/SEO/SEO";
 import "./Destinations.scss";
 
 const destinations = [
@@ -62,6 +63,12 @@ const destinations = [
 
 function Destinations() {
   return (
+    <>
+        <SEO
+        title="Travel Destinations"
+        description="Discover travel destinations across Kenya, Tanzania, Rwanda, Dubai and the United Arab Emirates with Check In Travel & Tours Ltd."
+        path="/destinations"
+      />
     <section className="destinations-page">
 
       {/* PAGE HEADER */}
@@ -136,7 +143,7 @@ function Destinations() {
             <div className="destinations-page__intro-image">
               <img
                 src={destinationsIntro}
-                alt="Beautiful travel destination"
+                alt="Travel destinations across East Africa and beyond"
               />
             </div>
 
@@ -178,7 +185,7 @@ function Destinations() {
                 <div className="destination-card__image">
                   <img
                     src={destination.image}
-                    alt={destination.name}
+                    alt={`${destination.name} travel destination`}
                   />
 
                   <span className="destination-card__region">
@@ -334,7 +341,8 @@ function Destinations() {
         </div>
       </section>
 
-    </section>
+      </section>
+      </>
   );
 }
 

@@ -27,7 +27,7 @@ function TeamPreview() {
           <div className="team-preview__image">
             <img
               src={SalesPersonImage}
-              alt="Fatima Shareef - Sales Person"
+              alt="Fatima Shareef - Sales Person image"
             />
           </div>
 

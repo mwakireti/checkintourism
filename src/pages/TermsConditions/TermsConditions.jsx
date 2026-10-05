@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import "./TermsConditions.scss";
+import SEO from "../../components/common/SEO/SEO";
 
 function TermsConditions() {
   return (
+    <>
+      <SEO
+  title="Terms & Conditions"
+  description="Read the Terms & Conditions for Check In Travel & Tours Ltd, including travel bookings, payments, cancellations, responsibilities and travel arrangements."
+  path="/terms-conditions"
+/>
     <main className="terms-page">
 
       {/* Page Header */}
@@ -281,7 +288,8 @@ function TermsConditions() {
 
         </div>
       </section>
-    </main>
+      </main>
+      </>
   );
 }
 

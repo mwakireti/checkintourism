@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import Icon from "../../components/common/Icon";
 import { tours } from "../../data/tours";
 import introImage from "../../assets/images/tours/coastal.jpg"
+import SEO from "../../components/common/SEO/SEO";
 import "./Tours.scss";
 
 function Tours() {
   return (
+    <>
+      <SEO
+        title="Tours & Packages"
+        description="Explore Kenya, Tanzania, Rwanda, East Africa and Dubai tours and travel packages from Check In Travel & Tours Ltd."
+        path="/tours"
+      />
     <div className="tours-page">
       <header className="tours-page__header">
         <div className="container">
@@ -267,7 +274,8 @@ function Tours() {
         </div>
       </section>
 
-    </div>
+      </div>
+      </>
   );
 }
 

@@ -5,10 +5,16 @@ import DestinationsPreview from "../../components/sections/Destinations/Destinat
 import WhyChooseUs from "../../components/sections/WhyChooseUs/WhyChooseUs";
 import PlanJourney from "../../components/sections/PlanJourney/PlanJourney";
 import TeamPreview from "../../components/sections/TeamPreview/TeamPreview";
+import SEO from "../../components/common/SEO/SEO";
 
 function Home() {
   return (
     <>
+      <SEO
+  title="Travel & Tours"
+  description="Check In Travel & Tours Ltd helps you plan, book and enjoy your journey with tours, safaris, flights, hotels, visa services, car rentals and more."
+  path="/"
+/>
       <Hero />
       <About />
       <Services />

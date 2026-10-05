@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import "./Services.scss";
 import { services } from "../../data/services.js";
 import ServiceCard from "./ServiceCard";
+import SEO from "../../components/common/SEO/SEO";
 
 function Services() {
   const gridRef = useRef(null);
@@ -40,6 +41,12 @@ function Services() {
   }, []);
 
   return (
+    <>
+       <SEO
+        title="Travel Services"
+        description="Explore travel services from Check In Travel & Tours Ltd including flights, accommodation, tours, visas, transportation and activities."
+        path="/services"
+      />
     <section className="services-page">
       {/* PAGE HEADER */}
       <header className="services-page__header">
@@ -247,7 +254,8 @@ function Services() {
 
         </div>
       </section>
-    </section>
+      </section>
+      </>
   );
 }
 

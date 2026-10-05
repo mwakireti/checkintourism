@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import "./LegalPolicy.scss";
+import SEO from "../../components/common/SEO/SEO";
+
 
 function LegalPolicy() {
   return (
+    <>
+      <SEO
+  title="Privacy Policy"
+  description="Read the Privacy Policy for Check In Travel & Tours Ltd and learn how personal information is collected, used and protected."
+  path="/legal-policy"
+/>
     <section className="legal-policy-page">
 
       {/* PAGE HEADER */}
@@ -662,7 +670,8 @@ function LegalPolicy() {
         </div>
       </main>
 
-    </section>
+      </section>
+      </>
   );
 }
 

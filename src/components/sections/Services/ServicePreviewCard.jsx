@@ -10,7 +10,7 @@ function ServicePreviewCard({ service }) {
       <img
         className="service-preview-card__image"
         src={service.image}
-        alt={service.title}
+        alt={`${service.title} service image`}
       />
 
       <div className="service-preview-card__base-overlay" />

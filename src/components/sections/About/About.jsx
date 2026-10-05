@@ -41,7 +41,7 @@ function About() {
             
             <div className="about__image">
               <div className="about__image-placeholder">
-                <img src={aboutImage} alt="About Us" />
+                <img src={aboutImage} alt="About Us section image" />
               </div>
             </div>
 

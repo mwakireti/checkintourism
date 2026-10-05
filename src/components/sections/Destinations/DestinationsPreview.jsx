@@ -68,7 +68,7 @@ function DestinationsPreview() {
           >
             <img
               src={featuredDestination.image}
-              alt={featuredDestination.name}
+              alt={`${featuredDestination.name} destination image`}
               className="destination-feature__image"
             />
 
@@ -98,7 +98,7 @@ function DestinationsPreview() {
               >
                 <img
                   src={destination.image}
-                  alt={destination.name}
+                  alt={`${destination.name} destination image`}
                   className="destination-item__image"
                 />
 
