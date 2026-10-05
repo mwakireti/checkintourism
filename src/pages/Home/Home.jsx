@@ -4,6 +4,7 @@ import Services from "../../components/sections/Services/Services";
 import DestinationsPreview from "../../components/sections/Destinations/DestinationsPreview";
 import WhyChooseUs from "../../components/sections/WhyChooseUs/WhyChooseUs";
 import PlanJourney from "../../components/sections/PlanJourney/PlanJourney";
+import TeamPreview from "../../components/sections/TeamPreview/TeamPreview";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <About />
       <Services />
       <WhyChooseUs />
+      <TeamPreview />
       <DestinationsPreview />
       <PlanJourney />
     </>
