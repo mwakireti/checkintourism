@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./CookiePolicy.scss";
+import SEO from "../../components/common/SEO/SEO";
 
 function CookiePolicy() {
   return (
