@@ -66,7 +66,7 @@ function Destinations() {
     <>
         <SEO
         title="Travel Destinations"
-        description="Discover travel destinations across Kenya, Tanzania, Rwanda, Dubai and the United Arab Emirates with Check In Travel & Tours Ltd."
+        description="Discover travel destinations across Kenya, Tanzania, Uganda, Rwanda, Dubai and the United Arab Emirates with Check In Travel & Tours Ltd."
         path="/destinations"
       />
     <section className="destinations-page">

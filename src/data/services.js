@@ -151,8 +151,6 @@ export const services = [
     description:
       "Choose convenient transportation for business trips, holidays, transfers and exploration. We help you find transportation options suited to your plans, whether you need a vehicle for a short trip, an extended stay or airport transportation.",
 
-    image: heroImage6,
-
     features: [
       "Short-term rentals",
       "Long-term rentals",

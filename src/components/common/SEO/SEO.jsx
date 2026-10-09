@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_NAME = "CheckIn Travel & Tours Ltd";
+const SITE_NAME = "Check In Travel & Tours Ltd";
 const SITE_URL = "https://checkintourism.com";
 
 function SEO({
@@ -53,26 +53,26 @@ function SEO({
     );
 
     // Canonical
-let canonicalTag = document.querySelector(
-  'link[rel="canonical"]'
-);
+    let canonicalTag = document.querySelector(
+      'link[rel="canonical"]'
+    );
 
-if (noCanonical) {
-  if (canonicalTag) {
-    canonicalTag.remove();
-  }
-} else {
-  if (!canonicalTag) {
-    canonicalTag = document.createElement("link");
-    canonicalTag.setAttribute("rel", "canonical");
-    document.head.appendChild(canonicalTag);
-  }
+    if (noCanonical) {
+      if (canonicalTag) {
+        canonicalTag.remove();
+      }
+    } else {
+      if (!canonicalTag) {
+        canonicalTag = document.createElement("link");
+        canonicalTag.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalTag);
+      }
 
-  canonicalTag.setAttribute(
-    "href",
-    canonicalUrl
-  );
-}
+      canonicalTag.setAttribute(
+        "href",
+        canonicalUrl
+      );
+    }
 
     // Open Graph title
     setMetaProperty(
@@ -87,10 +87,17 @@ if (noCanonical) {
     );
 
     // Open Graph URL
-    setMetaProperty(
-      "og:url",
-      canonicalUrl
-    );
+    if (noCanonical) {
+      const ogUrlTag = document.querySelector(
+        'meta[property="og:url"]'
+      );
+
+      if (ogUrlTag) {
+        ogUrlTag.remove();
+      }
+    } else {
+      setMetaProperty("og:url", canonicalUrl);
+    }
 
     // Open Graph image
     setMetaProperty(
@@ -121,6 +128,7 @@ if (noCanonical) {
     path,
     image,
     noIndex,
+    noCanonical
   ]);
 
   return null;

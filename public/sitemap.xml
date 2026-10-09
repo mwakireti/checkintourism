@@ -2,6 +2,8 @@
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
+  <!-- Main pages -->
+
   <url>
     <loc>https://checkintourism.com/</loc>
   </url>
@@ -33,6 +35,34 @@
   <url>
     <loc>https://checkintourism.com/book</loc>
   </url>
+
+  <!-- Service detail pages -->
+
+  <url>
+    <loc>https://checkintourism.com/services/flight-booking</loc>
+  </url>
+
+  <url>
+    <loc>https://checkintourism.com/services/hotel-reservations</loc>
+  </url>
+
+  <url>
+    <loc>https://checkintourism.com/services/tour-packages</loc>
+  </url>
+
+  <url>
+    <loc>https://checkintourism.com/services/visa-services</loc>
+  </url>
+
+  <url>
+    <loc>https://checkintourism.com/services/car-rentals</loc>
+  </url>
+
+  <url>
+    <loc>https://checkintourism.com/services/activity-bookings</loc>
+  </url>
+
+  <!-- Legal and information pages -->
 
   <url>
     <loc>https://checkintourism.com/legal-policy</loc>
